@@ -1,0 +1,230 @@
+{%extends "base_new.html"%} {% load static %} {%block body_block%}
+
+
+<!--  Hero Banner Start -->
+<div class="owl-carousel " id="banner-slider">
+    {% for banner in slider_banners %}
+    <div class="item">
+        <div class="hero-header jumbo-banner overflow-bg" style="background: url(/media/{{banner.image}}); background-position:center!important">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-md-10 content-left">
+                        <div class="hero-content">
+                            <h1>{{banner.title}}</h1>
+                            <p class="lead">{{banner.description |safe}}</p>
+                        </div>
+                        <div class="btn-sec">
+                            <a href="#" class="btn btn-primary btn-rounded">Read More<i
+									class="fa fa-long-arrow-right ml-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+<div class="clearfix"></div>
+<!--  Hero Banner End -->
+
+<!--  About Us Start -->
+
+<section class="about-sec ">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12">
+                {% for info in about %}
+                <div class="about-content">
+                    <!-- <p style="margin-bottom: 0px; font-family: arial; padding: 0px; color: rgb(68, 68, 68); font-size: 16px; letter-spacing: 0.6px;">MK Brothers established in<span style="font-weight: 700;color:#eb303e">&nbsp;2008, MK Brothers&nbsp;</span>is a&nbsp;<span style="font-weight: 700;color:#eb303e">manufacturer, wholesaler, trader&nbsp;</span>and<span style="font-weight: 700;color:#eb303e">&nbsp;retailer</span>&nbsp;offering&nbsp;<span style="font-weight: 700;color:#eb303e">Solar Inverter, Solar Panel, Solar Power Plants,&nbsp;</span>etc. Immensely acclaimed in the industry owing to their preciseness, these are presented by us in standard and modified forms to our clients. To add, only optimum class material is utilized in their production. We also provide the installation and maintenance service of Solar Panels and Solar Power Plant.</p><p style="margin-bottom: 0px; font-family: arial; padding: 0px; color: rgb(68, 68, 68); font-size: 16px; letter-spacing: 0.6px;">&nbsp;</p><p style="margin-bottom: 0px; font-family: arial; padding: 0px; color: rgb(68, 68, 68); font-size: 16px; letter-spacing: 0.6px;">Under the administration of our guide&nbsp;<span style="font-weight: 700;color:#eb303e">Mr. Rajesh Singla</span>, we have garnered a reputed position in this highly competitive industry.</p> -->
+                    <p>{{info.about |safe}}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+<div class="clearfix"></div>
+<!-- About Us End -->
+
+<!-- Video Services Cards Start-->
+<section class="about-sec video-sec bg-light pb-0">
+    <div class="container">
+
+        <!-- Video-Sec -->
+        <div class="row mb-5 py-5 pmb-0">
+            <div class="col-md-6">
+                <div class="left-img ">
+                    <img src="/static/images/banner/7.jpg" class="w-100" alt="">
+                    <div class="video-block" style="user-select: auto;">
+                        <a href="#" class="btn-trans-video p-0" data-toggle="modal" data-target="#popup-video" style="user-select: auto;">
+                            <i class="ti-control-play m-0" style="user-select: auto;"></i></a>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="span-text-top"></div>
+                        <h6 class="theme-cl">Solar Power</h6>
+                        <h3 class="text">Net Zero Coalition</h3>
+                        <p>We have joined the United Nations' Race to Zero campaign.</p>
+                        <div class="span-text-bottom"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="left-img ">
+                    <img src="/static/images/banner/14.jpg" class="w-100" alt="">
+                    <div class="video-block" style="user-select: auto;">
+                        <a href="#" class="btn-trans-video p-0" data-toggle="modal" data-target="#popup-video2" style="user-select: auto;">
+                            <i class="ti-control-play m-0" style="user-select: auto;"></i></a>
+                    </div>
+                    <div class="card-bottom">
+                        <div class="span-text-top"></div>
+                        <h6 class="theme-cl">Charging Station</h6>
+                        <h3 class="text">Charging Station Infra</h3>
+                        <p>We are leading manufacturer of charging stations in India.</p>
+                        <div class="span-text-bottom"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card Sec -->
+        <div class="service-card-new">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="service-block">
+                        <img src="/static/images/w5.jpeg" class="w-100 h-300" alt="">
+                        <div class="card-bottom">
+                            <h6 class="theme-cl">Electric Vehicle's</h6>
+                            <h3 class="text">Manufacturing for ECO NEXT</h3>
+                            <p>We are ensuring no carbon dioxide emissions</p>
+                            <a class="btn btn-outline border-radius-0 text-left" href="#">Read More<i
+									class="fa fa-long-arrow-right ml-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="service-block">
+                        <img src="/static/images/w4.jpeg" class="w-100 h-400" alt="">
+                        <div class="card-bottom card-bottom-dark">
+                            <h6 class="theme-cl">Solar Power</h6>
+                            <h3 class="text">Lorem, ipsum dolor.</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                            <a class="btn btn-outline-white border-radius-0 text-left" href="">Read More<i
+									class="fa fa-long-arrow-right ml-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="service-block" style="position: relative;	top: -14%;">
+                        <img src="/static/images/w2.jpeg" class="w-100 h-300" alt="">
+                        <div class="card-bottom">
+                            <h6 class="theme-cl">Network Distribution</h6>
+                            <h3 class="text">Lorem, ipsum.</h3>
+                            <a class="btn btn-outline border-radius-0 text-left" href="">Read More<i
+									class="fa fa-long-arrow-right ml-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="service-block" style="position: relative;	top: 12%;">
+                        <img src="/static/images/robot-gbd3778d9e_1280.jpg" class="w-100 h-450" alt="">
+                        <div class="card-bottom card-bottom-dark">
+                            <h6 class="theme-cl">Automation</h6>
+                            <h3 class="text">Lorem ipsum dolor sit amet consectetur.</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                            <a class="btn btn-outline-white border-radius-0 text-left" href="">Read More<i
+									class="fa fa-long-arrow-right ml-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="service-block" style="position: relative;	top: -40%;">
+                        <img src="/static/images/w1.jpeg" class="w-100 h-450" alt="">
+                        <div class="card-bottom">
+                            <h6 class="theme-cl">Wiring Harness</h6>
+                            <h3 class="text">Lorem ipsum dolor sit.</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+                            <a class="btn btn-outline border-radius-0 text-left" href="">Read More<i
+									class="fa fa-long-arrow-right ml-2"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="col-lg-6">
+                    <div class="service-block" style="position: relative;	top: 22%;">
+                        <img src="/static/images/banner/2.jpg" class="w-100 h-300" alt="">
+                        <div class="card-bottom card-bottom-dark">
+                            <h6 class="theme-cl">Solar Power</h6>
+                            <h3 class="text">Lorem, ipsum dolor.</h3>
+                            <a class="btn btn-outline-white border-radius-0 text-left" href="">Read More<i
+									class="fa fa-long-arrow-right ml-2"></i></a>
+                        </div>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+</section>
+<div class="clearfix"></div>
+<!-- Video Services Cards End-->
+
+<!-- COunter Start -->
+<section class="counter-bg" style="background: url('/static/images/banner/map3.png');background-color: #ffffffde ;background-blend-mode: overlay;background-position: center;">
+    <div class="container py-5">
+        <div class="row py-2">
+
+            <div class="col-lg-3 col-md-3 col-sm-6">
+                <div class="count-box text-center">
+                    <h2 class="count">30</h2>
+                    <h5>Year Successfull</h5>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-6">
+                <div class="count-box text-center">
+                    <h2 class="count">320</h2>
+                    <h5>Total Employee</h5>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-6">
+                <div class="count-box text-center">
+                    <h2 class="count">710</h2>
+                    <h5>Winning Award</h5>
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-md-3 col-sm-6">
+                <div class="count-box text-center">
+                    <h2 class="count">167</h2>
+                    <h5>Deam Branches</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Counter End -->
+
+<!--  company-brand -->
+<section class="company-brand">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="owl-carousel" id="company-brand">
+
+                <!-- Single Company Brand -->
+                {% for logo in logos %}
+                <div class="item">
+                    <img src="{{logo.logo.url}}" style="width: 100px;height:auto;" alt="" title="{{logo.title}}">
+                </div>
+                {% endfor %}
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+<div class="clearfix"></div>
+<!--  company-brand End -->
+{% endblock %}

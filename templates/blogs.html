@@ -1,0 +1,64 @@
+{%extends "base_new.html"%}
+{% load static %}
+{%block body_block%}
+
+<!-- Hero Banner  Start -->
+<div class="container-fluid breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <a href="/">
+                    Home
+                </a>
+                <a href="javascript:void(0)">
+                    <span>
+                        <i class="ti-arrow-right"></i>
+                    </span>
+                    Blogs
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+<!-- Hero Banner End -->
+
+<section>
+    <div class="container">
+        
+        <div class="row">
+            {% for blog in blogs %}
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="blog-grid-wrap mb-4" data-aos="fade-up" data-aos-duration="1200">
+                    <div class="blog-grid-thumb">
+                        <a href="/blog_detail/{{blog.id}}"><img src="{{blog.image.url}}" class="img-responsive" alt="" /></a>
+                        <div class="bg-cat-info">
+                            <div class="post-m-info">
+                                <h5 class="pm-date">{{blog.blog_date | date:"d"}}</h5>
+                                <h5 class="pm-month">{{blog.blog_date | date:"M"}}</h5>
+                            </div>
+                        </div>
+                        <h6 class="post-cat">{{blog.category}}</h6>
+                    </div>
+                    <div class="blog-grid-content">
+                        <h4 class="cnt-gb-title"><a href="/blog_detail/{{blog.id}}">{{blog.title}}</a></h4>
+                        <p>{{blog.blog | truncatewords:10 | safe}}</p>
+                        <p class="mb-2 pmb-0"> <a href="/blog_detail/{{blog.id}}" class="">
+                            <u>Read more</u></a></p>
+                    </div>
+                    <div class="blog-grid-meta">
+                        <div class="gb-info-author">
+                            <p><strong>By </strong>{{blog.author}}</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        
+    </div>
+</section>
+<div class="clearfix"></div>
+
+{% endblock %}

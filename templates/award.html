@@ -1,0 +1,49 @@
+{%extends "base_new.html"%}
+{% load static %}
+{%block body_block%}
+
+<!--  Hero Banner  Start====== -->
+<div class="page-title-wrap pt-img-wrap"
+    style="background:url(/static/images/banner/award2.png) no-repeat;background-position:center;">
+    <div class="container">
+        <div class="col-lg-12 col-md-12">
+            <div class="pt-caption text-center mt-5">
+                <h1>Awards & Recognitions</h1>
+                <p><a href="index.html">Home</a><span class="current-page">Awards</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+<!--  Hero Banner End -->
+
+<!-- Who We Are Start -->
+
+{% for awards in award %}
+<section class="gray mt-4">
+    <div class="container mt-4">
+        <div class="row ">
+
+            <div class="col-lg-5 ml-5">
+                <div class="award-img"><img src="{{awards.image.url}}" alt="" class="d-block mx-auto">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="award-card mt-5  our-team team-vert">
+                    <h3>{{awards.title}}</h3>
+                    <p>{{awards.description}}</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+{% endfor %}
+
+<div class="clearfix"></div>
+<!-- Who We Are End -->
+
+<div class="clearfix"></div>
+<!-- Sign up End -->
+
+{% endblock %}

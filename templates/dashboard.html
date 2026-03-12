@@ -1,0 +1,320 @@
+{%extends "base_new.html"%}
+{% load static %}
+{%block body_block%}
+
+<!-- Hero Banner  Start -->
+<div class="container-fluid breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <a href="/">
+                    Home
+                </a>
+                <a href="javascript:void(0)">
+                    <span>
+                        <i class="ti-arrow-right"></i>
+                    </span>
+                    Dashboard
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+<!-- Hero Banner End -->
+
+<!-- Services Detail Start  -->
+<section class="dashboard">
+    <div class="container">
+
+
+        <!-- All Product List -->
+        <div class="row">
+
+            <!-- Sidebar -->
+            <div class="col-lg-3 col-md-12 col-sm-12 mb-4 hidden-sm">
+
+                <div class="side-widget border-0">
+                    <div class="profile our-team m-0">
+                        <div class="teacher-thumb m-0">
+                            <label for="profile_pic_input" class="m-0">
+                                {% if request.user.profile_pic %}
+                                <img src="/media/{{request.user.profile_pic}}" style="width: 150px;height:150px;" class="student-profile-pic rounded-circle" alt="profile">
+
+                                {% else %}
+                                    <i title="Change Profile Pic" class="fa fa-user  w-100 mx-auto d-block student-profile-pic" style="font-size: 100px;padding: 15px;text-align: center;cursor: pointer;"></i>
+
+                                {% endif %}
+                            </label>
+                            <form method="post" style="display: none;" id="profile_pic_form"
+                                action="/change_profile_pic" enctype="multipart/form-data">
+                                {% csrf_token %}
+                                <input type="file" name="profile_pic" id="profile_pic_input">
+                            </form>
+                        </div>
+                        <h5 class="mb-0">{{request.user.name}}</h5>
+                        <p class="mt-0"><small>Last Login:{{request.user.last_login | date:"d M y"}}</small></p>
+
+                        <a href="/logout/" class="btn btn-danger bg-pink btn-sm mt-3"> <i
+                                class="fa fa-power-off mr-1"></i> Logout</a>
+
+                        <h6 class=" mt-3 pt-2 border-top mb-3">Need Help?</h6>
+                        <ul class="primary-list pl-0">
+                            <li class="text-mb-center"><i class="fa fa-phone text-pink"></i> +91 70092 61749</li>
+                            <li class="text-mb-center"><i class="fa fa-envelope  text-pink"></i> help@mk-brothers.com
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Section -->
+            <div class="col-lg-9 col-md-12 col-sm-12 mb-4">
+                <div class="row pl-5 pmb-0">
+                    <div class="profile-edit p-4 border"><a href="#EditProfile" class="profile-edit-btn"
+                            data-toggle="modal">
+                            <i class="fa fa-edit text-pink"></i>
+                        </a>
+                        <!-- Edit Form -->
+                        <form>
+                            <div class="row">
+                                <div class="form-group col-md-6 col-sm-6">
+                                    <p class="pmb-0">Name : <span class="h6">{% if request.user.name is None %} {%else %}{{request.user.name}} {% endif %}</span>
+                                    </p>
+                                </div>
+
+                                <div class="form-group col-md-6 col-sm-6">
+                                    <p class="pmb-0">Email Address : <span
+                                        class="h6">{% if request.user.email is None %} {%else %}{{request.user.email}} {% endif %}</span></p>
+                                </div>
+
+                                <div class="form-group col-md-6 col-sm-6">
+                                    <p class="pmb-0">Mobile Number : <span
+                                        class="h6">{% if request.user.mobile_no is None %} {%else %}{{request.user.mobile_no}} {% endif %}</span>
+                                    </p>
+                                </div>
+
+                                <div class="form-group col-md-6 col-sm-6">
+                                    <p class="pmb-0">Location : <span
+                                        class="h6">{% if request.user.location is None %} {%else %}{{request.user.location}} {% endif %}</span>
+                                    </p>
+                                </div>
+                                <div class="form-group col-md-6 col-sm-6">
+                                    <p class="pmb-0"><a href="{% url 'change_password' %}" class="" >
+                                        <u>Change Password</u></a>
+                                    </p>
+                                </div>
+
+
+                            </div>
+                        </form>
+                    </div>
+                    <div class="order-table mt-5 w-100">
+                        <a href="#AddBills" class="btn btn-sm btn-primary pull-right"
+                            data-toggle="modal">
+                            <i class="fa fa-plus"></i> Add
+                        </a>
+                        <h6 class="mb-3">Your Bills</h6>
+                        <table class="table border p-4">
+                            <thead>
+                                <tr>
+                                    <th scope="col">S.No.</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Title</th>
+                                    <th scope="col">File</th>
+                                    <th scope="col">Message</th>
+                                    <th scope="col">Action</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for bill in bills %}
+                                <tr>
+                                    <td>{{forloop.counter}}</td>
+                                    <td>{{bill.date | date:"d M y"}}</td>
+                                    <td>{{bill.title}}</td>
+                                    <td><a href="/media/{{bill.file}}" class="" target="blank" title="open">
+                                        <i class="fa fa-file text-pink" ></i></a></td>
+                                    <td><a title="{{bill.message}}" style="cursor: pointer;">Open</a></td>
+                                    <!-- <td><a href="#" class="profile-edit-btn"
+                                        data-toggle="modal">
+                                        <i class="fa fa-edit text-pink"></i>
+                                    </a></td> -->
+                                    <td><button data-id="{{bill.id}}" class="btn btn-default btn-sm delete_bill" title="Delete"><i class="fa fa-trash text-pink"></i></button></td>
+                                </tr>
+                                {% endfor %}
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- All Product List End -->
+
+    </div>
+</section>
+<div class="clearfix"></div>
+<!-- Services Detail End -->
+
+<!-- Edit Pro Modal -->
+<div class="modal fade" id="EditProfile" tabindex="-1" role="dialog" aria-labelledby="registermodal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" id="registermodal">
+            <div class="modal-header theme-header p-3 ">
+                <h5 class="modal-title  m-0 text-left" id="exampleModalLongTitle">Edit Profile</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post" id="profile_form" action="/update-profile" class="m-0">
+            <div class="modal-body">
+                <div class="">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="form-group col-md-12 col-sm-6">
+                            <input type="text" class="form-control" {% if request.user.name is None %} {%else %}value="{{request.user.name}}" {% endif %} name="name"
+                                placeholder="Full Name">
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-6">
+                            <input type="email" class="form-control" {% if request.user.email is None %} {%else %}value="{{request.user.email}}" {% endif %} name="email_id"
+                                    placeholder="Email Address">
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-6">
+                            <input type="text" class="form-control" {% if request.user.mobile_no is None %} {%else %}value="{{request.user.mobile_no}}" {% endif %}
+                                    name="mobile_no" placeholder="Mobile Number">
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-6">
+                            <input type="text" class="form-control" {% if request.user.location is None %} {%else %}value="{{request.user.location}}" {% endif %}
+                                    name="location" placeholder="Location">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer d-block">
+                <div class="row">
+                    <div class="col-6">
+                        <button type="button" class="btn btn-outline-danger btn-sm"
+                            data-dismiss="modal">Close</button>
+
+                    </div>
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-outline-success btn-sm float-right">Update</button>
+
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+
+
+<!-- Add Bill Modal -->
+<div class="modal fade" id="AddBills" tabindex="-1" role="dialog" aria-labelledby="registermodal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" id="registermodal">
+            <div class="modal-header theme-header p-3 ">
+                <h5 class="modal-title  m-0 text-left" id="exampleModalLongTitle">Add Bills</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post" id="profile_form" action="/add-bills/" class="m-0" enctype="multipart/form-data">
+            <div class="modal-body">
+                <div class="">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="form-group col-md-12 col-sm-6">
+                            <input type="text" class="form-control" name="title"  placeholder="Title">
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-6">
+                            <input type="file" class="form-control" name="file"  placeholder="File">                            
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-6">
+                            <textarea class="form-control" name="message"  placeholder="Message"></textarea>                            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer d-block">
+                <div class="row">
+                    <div class="col-6">
+                        <button type="button" class="btn btn-outline-danger btn-sm"
+                            data-dismiss="modal">Close</button>
+
+                    </div>
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-outline-success btn-sm float-right">Save</button>
+
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+
+
+<!-- Edit Bill Modal -->
+<div class="modal fade" id="EditBill" tabindex="-1" role="dialog" aria-labelledby="registermodal" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content" id="registermodal">
+            <div class="modal-header theme-header p-3 ">
+                <h5 class="modal-title  m-0 text-left" id="exampleModalLongTitle">Edit Bill</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form method="post" id="profile_form" action="/add-bills/" class="m-0" enctype="multipart/form-data">
+            <div class="modal-body">
+                <div class="">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div class="form-group col-md-12 col-sm-6">
+                            <input type="text" class="form-control" name="title"  placeholder="Title">
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-6">
+                            <input type="file" class="form-control" name="file"  placeholder="File">
+                            
+                        </div>
+
+                        <div class="form-group col-md-12 col-sm-6">
+                            <input type="text" class="form-control" name="message"  placeholder="Message">
+                            
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer d-block">
+                <div class="row">
+                    <div class="col-6">
+                        <button type="button" class="btn btn-outline-danger btn-sm"
+                            data-dismiss="modal">Close</button>
+
+                    </div>
+                    <div class="col-6">
+                        <button type="submit" class="btn btn-outline-success btn-sm float-right">Save</button>
+
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- End Modal -->
+
+
+
+{% endblock %}

@@ -1,0 +1,113 @@
+{%extends "base_new.html"%}
+{% load static %}
+{%block body_block%}
+
+<!-- Hero Banner  Start -->
+<div class="container-fluid breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <a href="/">
+                    Home
+                </a>
+                
+                <a href="/blogs">
+                    <span>
+                        <i class="ti-arrow-right"></i>
+                    </span>
+                    Blogs
+                </a>
+                
+                <a href="javascript:void(0)">
+                    <span>
+                        <i class="ti-arrow-right"></i>
+                    </span>
+                    Blog Detail
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="clearfix"></div>
+<!-- Hero Banner End -->
+
+<!--  Blog Grid Start -->
+<section class="blog-detail-sec">
+    <div class="container">
+        
+        <div class="row">
+            {% for blog in blogs_detail %}
+            <div class="col-lg-8 col-md-8 col-sm-12">
+                <article class="blog-news big-detail-wrap">
+                    <div class="blog-detail-wrap">
+                    
+                        <!-- Featured Image -->
+                        <figure class="img-holder">
+                            <a href="/blog_detail/{{blog.id}}"><img src="{{blog.image.url}}" class="img-responsive" alt="News"></a>
+                            <div class="blog-post-date theme-bg">
+                                {{blog.blog_date | date:"d M y"}}
+                            </div>
+                        </figure>
+                        
+                        <!-- Blog Content -->
+                        <div class="full blog-content">
+                            <div class="post-meta">By: <a href="#" class="author theme-cl">{{blog.author}}</a> | 10 comment-detail </div>
+                            <a href="/blog_detail/{{blog.id}}"><h3>{{blog.title}}</h3></a>
+                            <div class="blog-text">
+                                <p>{{blog.blog | safe}}</p>
+                                
+                                <!-- <blockquote>
+                                    <p class="p1">I’ve been asked a lot for my view on American health care. Well, ‘it would be a good idea,’ to quote Gandhi.<br>
+                                    ―&nbsp;<span class="authorOrTitle">Paul Farmer</span></p>
+                                </blockquote> -->
+                                
+                            </div>
+                        
+                    </div>
+                </article>
+                        
+            </div>
+            {% endfor %}
+            
+            <!-- Sidebar Start -->
+            <div class="col-lg-4 col-md-4 col-sm-12">
+                <div class="sidebar">
+                    
+                    <div class="side-widget">
+                        <div class="side-widget-header">
+                            <h4><i class="ti-check-box"></i>Related Blogs</h4>
+                        </div>
+                        <div class="side-widget-body p-t-10">
+                            <div class="side-list">
+                                <ul class="side-blog-list">
+                                    {% for r_blog in blogs %}
+                                    <li>
+                                        <a href="/blog_detail/{{r_blog.id}}">
+                                            <div class="blog-list-img">
+                                                <img src="{{r_blog.image.url}}" class="img-responsive" alt="">
+                                            </div>
+                                        </a>
+                                        <div class="blog-list-info">
+                                            <h5><a href="/blog_detail/{{r_blog.id}}" title="blog">{{r_blog.title}}</a></h5>
+                                            <div class="blog-post-meta">
+                                                <span class="updated">{{r_blog.blog_date | date:"d M y"}}</span> | <a href="#" rel="tag">{{r_blog.tag}}</a>					
+                                            </div>
+                                        </div>
+                                    </li>
+                                    {% endfor %}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+</section>
+<div class="clearfix"></div>
+<!--  Blog Grid End -->
+
+{% endblock %}

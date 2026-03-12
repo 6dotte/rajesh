@@ -1,0 +1,478 @@
+{%extends "base.html"%}
+{% load static %}
+{%block body_block%}
+<div class="owl-carousel" id="banner-slider">
+	<div class="item">
+		<div class="hero-header jumbo-banner overflow-bg" style="background: url(/static/images/banner/13.png);">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-md-10">
+						
+						<div class="hero-content">
+							<h1>Solar EPC</h1>
+							<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<div class="btn-sec">
+								<a href="#" class="btn btn-primary btn-rounded">Find Out More</a>
+
+								<a class="btn-trans-video ml-1" href="https://www.youtube.com/watch?v=A8EI6JaFbv4" data-toggle="modal" data-target="#popup-video"><i class="ti-control-play"></i>Watch Video</a>
+
+							</div>
+						</div>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="item">
+		<div class="hero-header jumbo-banner overflow-bg" style="background: url(/static/images/banner/9.jpg);background-position: center !important;;">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-md-10">
+						
+						<div class="hero-content">
+							<h1>Wire Hareness</h1>
+							<p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							<div class="btn-sec">
+								<a href="#" class="btn btn-primary btn-rounded">Find Out More</a>
+								<a class="btn-trans-video ml-1" href="https://www.youtube.com/watch?v=A8EI6JaFbv4" data-toggle="modal" data-target="#popup-video"><i class="ti-control-play"></i>Watch Video</a>
+							</div>
+						</div>
+					</div>
+				
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="clearfix"></div>
+<!--  Hero Banner End -->
+
+<!--  About Us Start -->
+<section class="about-sec ">
+	<div class="container mt-4">
+
+		<div class="row">
+			<div class="sec-heading mx-auto hide-dekstop">
+				<h2 class="">About Us</h2>
+			</div>
+			<div class="col-lg-5 col-md-12">
+				<img src="/static/images/about.png" class="img-fluid mx-auto mt-5" alt="MK Brothers">
+			</div>
+
+			<div class="col-lg-7 col-md-12">
+				<div class="about-content">
+					<h2 class="hide-mobile">About Us</h2>
+					<p>{{about.about|safe}}</p>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+</section>
+<div class="clearfix"></div>
+<!-- About Us End -->
+			<!-- ============================ Counter Start ================================== -->
+			<section class="image-bg" style="background:#003b77 url(static/img/banner-55.png) no-repeat;">
+				<div class="container">
+					<div class="row">
+						<div class="col text-center">
+							<div class="sec-heading light mx-auto">
+								<h2>Our Services</h2>
+								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+					
+						<div class="col-lg-3 col-md-3 col-sm-6">
+							<div class="count-box text-center">
+								<h2 class="count">{{about.successfull_years}}</h2>
+								<h5>Year Successfull</h5>
+							</div>
+						</div>
+						
+						<div class="col-lg-3 col-md-3 col-sm-6">
+							<div class="count-box text-center">
+								<h2 class="count">{{about.employees}}</h2>
+								<h5>Total Employee</h5>
+							</div>
+						</div>
+						
+						<div class="col-lg-3 col-md-3 col-sm-6">
+							<div class="count-box text-center">
+								<h2 class="count">{{about.awards}}</h2>
+								<h5>Winning Award</h5>
+							</div>
+						</div>
+						
+						<div class="col-lg-3 col-md-3 col-sm-6">
+							<div class="count-box text-center">
+								<h2 class="count">{{about.branches}}</h2>
+								<h5>Deam Branches</h5>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+				<div class="ht-80"></div>
+			</section>
+			<div class="clearfix"></div>
+			<!-- ============================ Counter End ================================== -->
+			
+			<!-- ============================ Features Start ================================== -->
+			<section class="pd-0 overlay-top">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-lg-12 col-md-10 col-sm-12">
+							<div class="row mrg-0 bg-white box-shadow mt-5 border--radius">
+
+								<div class="col-lg-12 col-md-12 col-sm-12">
+									<div class="custom-tab icon-style">
+										<ul class="nav nav-tabs" id="myTab" role="tablist">
+											<li class="nav-item">
+												<a class="nav-link active" id="email-marketing-tab" data-toggle="tab" href="#email-marketing" role="tab" aria-controls="email-marketing" aria-selected="false">
+													<img src="/static/images/motorcycle.png" class="img-fluid" alt="">
+													<h5>Electric Vehicle</h5>
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link " id="market-analysis-tab" data-toggle="tab" href="#market-analysis" role="tab" aria-controls="market-analysis" aria-selected="true">
+													<img src="/static/images/solar.png" class="img-fluid" alt="">
+													<h5>Solar EPC</h5>
+												</a>
+											</li>
+											
+											<li class="nav-item">
+												<a class="nav-link" id="keyword-nalysis-tab" data-toggle="tab" href="#keyword-nalysis" role="tab" aria-controls="keyword-nalysis" aria-selected="false">
+													<img src="/static/images/successful-connection.png" class="img-fluid" alt="">
+													<h5>Wire Hareness</h5>
+												</a>
+											</li>
+											<li class="nav-item">
+												<a class="nav-link" id="on-page-seo-tab" data-toggle="tab" href="#on-page-seo" role="tab" aria-controls="on-page-seo" aria-selected="false">
+													<img src="/static/images/electric-pole.png" class="img-fluid" alt="">
+													<h5>Pole Tower</h5>
+												</a>
+											</li>
+										</ul>
+										<div class="tab-content" id="myTabContent">
+											<div class="tab-pane fade" id="market-analysis" role="tabpanel" aria-labelledby="market-analysis-tab">
+												<div class="row align-items-center m-0">
+													<div class="col-lg-5 col-md-5 text-center">
+														<img src="/static/images/services/solar/solar-panel.jpg" class="img-fluid mx-auto" alt="">
+													</div>
+													<div class="col-lg-7 col-md-7">
+														<h2>Solar EPC</h2>
+														<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+														<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+													</div>
+												</div>
+											</div>
+											<div class="tab-pane fade show active" id="email-marketing" role="tabpanel" aria-labelledby="email-marketing-tab">
+												<div class="row align-items-center m-0">
+													<div class="col-lg-5 col-md-5 text-center">
+														<img src="/static/images/services/electric/2.jpeg" class="img-fluid mx-auto" alt="">
+
+													</div>
+													<div class="col-lg-7 col-md-7">
+														<h2>Electric Vehicle</h2>
+														<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+														<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+													</div>
+												</div>
+											</div>
+											<div class="tab-pane fade" id="keyword-nalysis" role="tabpanel" aria-labelledby="keyword-nalysis-tab">
+												<div class="row align-items-center m-0">
+													<div class="col-lg-5 col-md-5 text-center">
+														<img src="/static/images/services/wire1.jpg" class="img-fluid mx-auto" alt="">
+													</div>
+													<div class="col-lg-7 col-md-7">
+														<h2>Wire Hareness</h2>
+														<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+														<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+													</div>
+												</div>
+											</div>
+											<div class="tab-pane fade" id="on-page-seo" role="tabpanel" aria-labelledby="on-page-seo-tab">
+												<div class="row align-items-center m-0">
+													<div class="col-lg-5 col-md-5 text-center">
+														<img src="/static/images/services/pole1.jpg" class="img-fluid mx-auto" alt="">
+													</div>
+													<div class="col-lg-7 col-md-7">
+														<h2>Pole Tower</h2>
+														<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+														<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<div class="clearfix"></div>
+
+
+<!-- All Services Start -->
+<section class="all-services mb-5">
+	<div class="container">
+		<div class="row">
+			<div class="col text-center">
+				<div class="sec-heading mx-auto">
+					<h2>Other Services</h2>
+				</div>
+			</div>
+			<div class="owl-carousel" id="all-services">
+				{% for service in services %}
+				<a href="/service/{{service.slug}}">
+					<div class="item">
+						<div class="product-wrap">
+							<div class="product-caption">
+								<div class="product-caption-info ">
+									<div class="product-caption-thumb">
+										<div class="product-caption-content">
+											<img src="{{service.image.url}}" class="img-fluid mx-auto" alt="">
+										</div>
+									</div>
+									<div class="uc_product_details">
+										<h5 class="uc_price">{{service.title}}</h5>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</a>
+				{% endfor %}
+			</div>
+		</div>
+
+	</div>
+</section>
+<div class="clearfix"></div>
+<!-- All Services end -->
+
+
+
+<!-- Video Start -->
+<section class="image-bg default-bg" style="    background: #003b77 url(static/img/line6.png)no-repeat;">
+	<div class="container">
+		<div class="row">
+			<div class="col-12 text-center">
+				<div class="sec-heading light mx-auto">
+					<h2>Videos</h2>
+				</div>
+			</div>
+			<div class="col-md-10
+			d-block mx-auto ">
+
+				<div class="row justify-content-center">
+					<div class="owl-carousel video-slider">
+						<div class="item">
+							<section class="cover height-80 imagebg text-center" data-overlay="5" style="  height: 250px;  border: 2px solid white;">
+								<div class="bg-img-holder" style="background: url(/static/images/services/service-14.jpg); opacity: 1;">
+								</div>
+								<div class="container pos-vertical-center">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 col-md-10">
+											<h4 class="mb-4">
+												Solar EPC
+											</h4>							
+											<div class="video-block">
+												<a href="#" class="btn-trans-video p-0" data-toggle="modal" data-target="#popup-video">
+													<i class="ti-control-play m-0"></i></a>
+											 </div>
+										</div>
+									</div>
+									<!--end of row-->
+								</div>
+								<!--end of container-->
+							</section>
+						</div>
+						<div class="item">
+							<section class="cover height-80 imagebg text-center" data-overlay="5" style="  height: 250px;  border: 2px solid white;">
+								<div class="bg-img-holder" style="background: url(/static/images/services/service-13.jpg); opacity: 1;">
+								</div>
+								<div class="container pos-vertical-center">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 col-md-10">
+											<h4 class="mb-4">
+												Wire Hareness
+											</h4>							
+											<div class="video-block">
+												<a href="#" class="btn-trans-video p-0" data-toggle="modal" data-target="#popup-video">
+													<i class="ti-control-play m-0"></i></a>
+											 </div>
+										</div>
+									</div>
+									<!--end of row-->
+								</div>
+								<!--end of container-->
+							</section>
+						</div>
+						<div class="item">
+							<section class="cover height-80 imagebg text-center" data-overlay="5" style="  height: 250px;  border: 2px solid white;">
+								<div class="bg-img-holder" style="background: url(/static/images/services/service-12.jpg); opacity: 1;">
+								</div>
+								<div class="container pos-vertical-center">
+									<div class="row justify-content-center">
+										<div class="col-lg-8 col-md-10">
+											<h4 class="mb-4">
+												Solar EPC
+											</h4>							
+											<div class="video-block">
+												<a href="#" class="btn-trans-video p-0" data-toggle="modal" data-target="#popup-video">
+													<i class="ti-control-play m-0"></i></a>
+											 </div>
+										</div>
+									</div>
+									<!--end of row-->
+								</div>
+								<!--end of container-->
+							</section>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
+
+		</div>
+
+	</div>
+	<div class="ht-80"></div>
+</section>
+
+<section class="pd-0 overlay-top mb-5">
+	<div class="container">
+
+	</div>
+</section>
+<!-- Video End -->
+
+<!-- Award start -->
+<section class="about-sec gray">
+	<div class="container my-4">
+
+		<div class="row">
+
+			<!-- Hide Mobile -->
+			<div class="col-lg-6 col-md-6 hide-mobile">
+				<div class="about-content mt-5">
+					<h2>Awards & Recognition</h2>
+					<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+						voluptatum
+						deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate.
+					</p>
+					<ul class="simple-list">
+						<li>We Provide Powerful features</li>
+						<li>We love Our Customers</li>
+						<li>Join us and get best offer</li>
+						<li>Our Support is very dedicated for our customers</li>
+						<li>We provide 24x7 support with extended offer</li>
+					</ul>
+
+				</div>
+			</div>
+			<!-- Hide Mobile -->
+
+			<div class="col-lg-5 ml- col-md-6 mmb-0">
+				<div class="about-content mt-5 hide-dekstop">
+					<h2>Awards & Recognition</h2>
+				</div>
+				<img src="/static/images/award/certificate-1.jpg" class="img-fluid mr-auto ml-5 pmb-0"
+					style="box-shadow: 2px 5px 15px #0606060f;" alt="">
+			</div>
+
+			<!-- Hide Dekstop -->
+			<!-- <div class="col-lg-6 col-md-6 hide-desktop">
+				<div class="about-content mt-5">
+					<p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum
+						deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate.</p>
+					<ul class="simple-list">
+						<li>We Provide Powerful features</li>
+						<li>We love Our Customers</li>
+						<li>Join us and get best offer</li>
+						<li>Our Support is very dedicated for our customers</li>
+						<li>We provide 24x7 support with extended offer</li>
+					</ul>
+
+				</div>
+			</div> -->
+			<!-- Hide Dekstop -->
+
+		</div>
+
+	</div>
+</section>
+<div class="clearfix"></div>
+<!-- Award end -->
+
+<!-- Testimonial Start -->
+<section class="mb-4 mt-4 mmb-0">
+	<div class="container">
+		<div class="col text-center">
+			<div class="sec-heading mx-auto">
+				<h2>Testimonials</h2>
+			</div>
+		</div>
+		<div class="row">
+			{% for testimonial in testimonials %}
+			<div class="col-lg-4 col-md-4">
+				<div class="testimonial-wrap {% if forloop.count == 1 %} active {% endif %}aos-init aos-animate" data-aos="fade-down" data-aos-duration="1200">
+					<i class="fa fa-quote-left"></i>
+					<p class="custom-scroll">{{testimonial.testimonial}}</p>
+
+					<div class="client-thumb-box">
+						<div class="client-thumb-content">
+							<div class="client-thumb">
+								<img src="{{testimonial.image.url}}" class="img-responsive img-circle" alt="">
+							</div>
+							<h5 class="mb-0">{{testimonial.name}}</h5>
+							<span class="small-font">{{testimonial.designation}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+
+	</div>
+</section>
+<!-- Testimonial end -->
+			<!-- Video Modal -->
+			<div class="modal fade" id="popup-video" tabindex="-1" role="dialog" aria-labelledby="popup-video" aria-hidden="true">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<iframe class="embed-responsive-item" width="100%" height="480" src="https://www.youtube.com/embed/96I25KtuszM" frameborder="0" allow="" allowfullscreen></iframe>
+				</div>
+			</div>
+			<!--  company-brand -->
+<section class="company-brand">
+	<div class="container">
+
+		<div class="row">
+
+			<div class="owl-carousel" id="company-brand">
+
+				<!-- Single Company Brand -->
+				{% for logo in logos %}
+				<div class="item">
+					<img src="{{logo.logo.url}}" style="width: 100px;height:auto;" alt="" title="{{logo.title}}">
+				</div>
+				{% endfor %}
+
+			</div>
+
+		</div>
+
+	</div>
+</section>
+<div class="clearfix"></div>
+<!--  company-brand End -->
+{% endblock %}
