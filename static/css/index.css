@@ -1,0 +1,264 @@
+.top_bar {
+  background: #fff;
+  border-bottom: 1px solid #e4e4e4;
+  padding: 0;
+}
+.top_bar a {
+  color: #003b77;
+}
+.top_bar li {
+  border-left: 1px solid #e4e4e4;
+}
+.top_bar .left-bar a {
+  display: block;
+  padding: 12px 22px;
+}
+ul.header-bottom-social li {
+  margin-top: 12px;
+}
+.bar_inner ul {
+  display: flex;
+  justify-content: end;
+}
+.nav-menu.nav-menu-social > li.add-listing a {
+  padding: 13px 20px;
+  top: 0;
+  border-radius: 0;
+  width: 120px;
+}
+.nav-menu.nav-menu-social > li.add-listing.theme-bg {
+  border-radius: 0 !important;
+  margin: 0;
+  top: 0;
+}
+.nav-menu.nav-menu-social > li.add-listing a {
+  padding: 13px 20px;
+  top: 0;
+}
+.nav-toggle,
+.navigation-hidden .nav-header {
+  display: block;
+}
+.nav-toggle:before {
+  background-color: #eb303e;
+  box-shadow: 0 0.5em 0 0 #eb303e, 0 1em 0 0 #eb303e;
+}
+.nav-menu > li > a {
+  padding: 29px 20px;
+}
+.nav-brand img {
+  max-width: 115px;
+}
+.hero-content::before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: calc(100% - 100px);
+  left: 0;
+  background: #eb303e;
+  top: 8px;
+}
+.hero-content,
+.hero-header .btn-sec {
+  padding-left: 25px;
+}
+.btn-primary,
+.btn-primary.disabled {
+  background: #dcdcdc;
+  border: 1px solid #dcdcdc;
+  color: #003b77;
+}
+.hero-header .content-left {
+  position: relative;
+  top: -30px;
+}
+.content-right {
+  position: absolute;
+  background: #00264d;
+  padding: 20px 10px 20px 20px;
+  right: 8%;
+  width: 22%;
+  bottom: 45px;
+  color: #fff;
+  z-index: 1;
+}
+.content-right li {
+  font-size: 14px;
+}
+.position-relative {
+  position: relative;
+}
+.overflow-bg:before {
+  background: rgb(6 28 56 / 13%)
+}
+html body .bg-light {
+  background-color: #f4f4f4 !important;
+}
+
+.left-img .video-block {
+  top: 45%;
+  top: 30%;
+  position: absolute;
+  left: 45%;
+}
+.left-img a.btn-trans-video i {
+  width: 58px;
+  height: 58px;
+  line-height: 60px;
+  font-size: 29px;
+  background: #f08047;
+  -webkit-box-shadow: 0 0 0 12px rgb(240 128 71 / 38%);
+  box-shadow: 0 0 0 12px rgb(240 128 71 / 38%);
+}
+.card-bottom {
+  background: #fff;
+  box-shadow: 0 2px 10px 0 #80808029;
+  z-index: 100;
+  margin-top: -10%;
+  position: relative;
+  width: 91%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 16px;
+}
+.service-card-new .card-bottom {
+  border-top: 2.5px solid #f4295c;
+  margin-top: -22%;
+}
+.span-text-bottom {
+  position: absolute;
+  width: 60%;
+  height: 2.5px;
+  right: 0;
+  background: #f4295c;
+  bottom: -2px;
+}
+.span-text-top {
+  position: absolute;
+  width: 70%;
+  height: 2.5px;
+  left: 0;
+  background: #f4295c;
+  top: -2px;
+}
+.left-img img {
+  height: 304px;
+  object-fit: cover;
+}
+.service-card-new .img-1 {
+  height: 300px;
+  object-fit: cover;
+}
+.h-300 {
+  height: 300px;
+}
+.h-400 {
+  height: 420px;
+}
+.h-450 {
+  height: 450px;
+}
+.h-500 {
+  height: 500px;
+}
+.card-bottom-dark {
+  background: #00264d;
+  color: #fff;
+}
+.card-bottom-dark h3 {
+  color: #fff;
+}
+.card-bottom h3 {
+  margin: 15px 0;
+}
+.card-bottom-dark .theme-cl {
+  color: #a5a3a4 !important;
+}
+/* .container {
+  max-width: 1220px;
+} */
+.border-radius-0 {
+  border-radius: 0;
+}
+
+.btn-outline {
+  border: 1px solid #f4295c;
+  color: #f4295c;
+  border-radius: 0 !important;
+  font-size: 14px;
+}
+.btn-outline:hover {
+  background: #f4295c;
+  color: #fff;
+}
+.fa.fa-chevron-right {
+  font-size: 12px;
+  position: relative;
+  top: -1px;
+}
+.btn-outline-white {
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 0 !important;
+  font-size: 14px;
+}
+.btn-outline-white:hover {
+  background: #fff;
+  color: #003b77;
+}
+.nav-header {
+  float: right;
+}
+.nav-menu {
+  float: left;
+}
+.nav-toggle {
+  left: 0;
+  right: auto;
+  top: 49%;
+}
+.nav-menu > li > a {
+  padding: 29px 18px;
+}
+.menu-title {
+  border-left: 7px solid #f4295c;
+  padding-left: 10px;
+  margin: 30px 0;
+}
+.nav-dropdown li a {
+  padding: 14px 12px 9px 0px;
+  border-bottom: 0;
+}
+.nav-dropdown {
+  padding: 20px 28px 50px;
+  min-width: 90%;
+}
+.nav-dropdown h6 a {
+  color: #003b77;
+}
+.nav-dropdown h6::before {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 4px;
+  background-color: gray;
+}
+.nav-dropdown h6 {
+  position: relative;
+}
+.nav-dropdown h6::before {
+  content: "";
+  position: absolute;
+  width: 140px;
+  height: 1px;
+  background-color: #eb303e2e;
+  top: 26px;
+}
+.nav-submenu {
+  padding-bottom: 20px;
+}
+
+.btn-primary{
+  border-radius:0!important;
+}
